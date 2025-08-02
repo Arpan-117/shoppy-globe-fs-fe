@@ -30,8 +30,9 @@ function CartItem(props) {
           return response.json();
         })
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           setTrackQuantity(data.quantity);
+          props.onToggle(!props.toggler);
           // return data;
         })
         .catch((err) => {
@@ -94,8 +95,9 @@ function CartItem(props) {
             return response.json();
           })
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             setTrackQuantity(data.quantity);
+            props.onToggle(!props.toggler);
             // return data;
           })
           .catch((err) => {
@@ -108,7 +110,7 @@ function CartItem(props) {
         return alert('Cannot place order for 0 items! Please remove from cart.');
       }
     } catch (err) {
-      console.error(`Handle Increase Error: ${err}`);
+      console.error(`Handle Decrease Error: ${err}`);
     }
   }
 
