@@ -41,10 +41,11 @@ function Cart() {
         const result = await res.json();
         setData(result);
         setError(null);
-        console.log(data);
-        console.log(data.cartItems[0].productId);
-        console.log(data.cartItems.length);
+        // console.log(data);
+        // console.log(data.cartItems[0].productId);
+        // console.log(data.cartItems.length);
       } catch (err) {
+        console.log(err);
         setError(err.message);
       } finally {
         setLoading(false);
@@ -91,6 +92,7 @@ function Cart() {
   // loading spinner when product details are being fetched
   if (loading) return (
     <div className='px-8 lg:px-16 py-16 text-center'>
+    <ScrollToTop />
       <div className='mx-auto text-justify inline-block'>
         <MoonLoader
           color='#129990'
@@ -100,19 +102,38 @@ function Cart() {
       </div>
     </div>
   );
-  // display error details if product details cannot be fetched
-  if (error && !data) {
-    return (
-      <div className='px-8 lg:px-16 py-16 lg:py-8'>
-        <p className='py-4 text-lg text-center'>Error1: {error}</p>
-      </div>
-    );
+
+  if (error) {
+    if (error && !data) {
+      return (
+        <div className='px-8 lg:px-16 py-16 lg:py-8'>
+        <ScrollToTop />
+          <p className='py-4 text-lg text-center'>Error1: {error}</p>
+        </div>
+      );
+    } else {
+      return (
+        <div className='px-8 lg:px-16 py-16 lg:py-8'>
+        <ScrollToTop />
+          <p className='py-4 text-lg text-center'>Error: {error}</p>
+        </div>
+      );
+    }
   }
+
   // if (error) return (
   //     <div className='px-8 lg:px-16 py-16 lg:py-8'>
   //       <p className='py-4 text-lg text-center'>Error: {error}</p>
   //     </div>
   //   );
+  // display error details if product details cannot be fetched
+  // if (error && !data) {
+  //   return (
+  //     <div className='px-8 lg:px-16 py-16 lg:py-8'>
+  //       <p className='py-4 text-lg text-center'>Error1: {error}</p>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className='px-8 lg:px-16 py-16 lg:py-8'>

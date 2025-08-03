@@ -57,15 +57,29 @@ function Register() {
     }
 
     return (
-        <div>
-            <div className='md:basis-2/3'>
-                <form className='flex flex-col space-y-4'>
+        <div className='px-8 lg:px-16 py-16 lg:py-8'>
+
+            <div className='py-2 md:py-4 px-4 flex flex-row fixed top-0 w-full z-10'>
+                <div className='py-2 basis-1/3 md:basis-1/4'>
+                    <Link to='/'>
+                        <h1 className='font-semibold font-[Kaushan_Script] text-xl md:text-3xl text-[#129990]'>Shoppy Globe</h1>
+                    </Link>
+                </div>
+            </div>
+
+            <div className='md:w-1/2 lg:w-1/3 mx-auto py-16'>
+
+            <h3 className='text-center md:text-left text-2xl md:text-3xl text-[#096B68] font-semibold py-4'>Sign Up</h3>
+                <p className='text-center md:text-left text-[#129990] font-semibold pb-4'>Everything you need. Just a click away.</p>
+
+                <form className='flex flex-col space-y-4 py-4'>
                     <label className='block text-[#129990] font-semibold mb-1'>
                         Name:
                         <input
                             type="name"
                             name="name"
                             value={fullName}
+                            placeholder='Enter your Name'
                             onChange={(e) => setFullName(e.target.value)}
                             className='w-full border border-[#129990] rounded px-3 py-2 focus:outline-none'
                         />
@@ -78,6 +92,7 @@ function Register() {
                             type="email"
                             name="email"
                             value={emailId}
+                            placeholder='Enter your email'
                             onChange={(e) => setEmailId(e.target.value)}
                             className='w-full border border-[#129990] rounded px-3 py-2 focus:outline-none'
                         />
@@ -90,21 +105,24 @@ function Register() {
                             type="password"
                             name="password"
                             value={password}
+                            placeholder='Password'
                             onChange={(e) => setPassword(e.target.value)}
                             className='w-full border border-[#129990] rounded px-3 py-2 focus:outline-none'
                         />
                         {errors.pass && <span className='text-red-500 text-sm'>{errors.pass}</span>}
                     </label>
                 </form>
+
                 <div className='text-center py-2'>
                     <button className='px-4 py-2 rounded-md bg-[#129990] font-semibold text-[#FFFBDE] shadow-xl/30 hover:scale-105' onClick={handleRegister}>
                         Register
                     </button>
                 </div>
+
+                <div className='py-4 text-center'>
+                <p>Already have an account? <span className='font-semibold text-[#129990]'><Link to='/login'>Sign In</Link></span></p>
             </div>
 
-            <div>
-                <p>Already have an account? <span><Link to='/login'>Sign In</Link></span></p>
             </div>
 
         </div>

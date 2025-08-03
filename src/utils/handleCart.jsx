@@ -38,6 +38,7 @@ const addToCart = (id) => {
                 return response.json();
             })
             .then((data) => {
+                alert('Item has been added to cart.')
                 console.log(data);
                 console.log(data);
             })

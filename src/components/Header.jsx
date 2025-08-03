@@ -26,7 +26,7 @@ function Header() {
 
         <div className='py-2 basis-1/3 md:basis-1/4'>
           <NavLink to='/'>
-            <h1 className='font-semibold text-xl md:text-2xl text-[#FFFBDE]'>Shoppy Globe</h1>
+            <h1 className='font-semibold font-[Kaushan_Script]  text-xl md:text-2xl text-[#FFFBDE]'>Shoppy Globe</h1>
           </NavLink>
         </div>
 
@@ -39,7 +39,7 @@ function Header() {
               </NavLink>
             </li>
 
-            <li>
+            <li className='font-semibold text-[#FFFBDE]'>
               {auth.isAuthenticated ? (<span onClick={handleLogout}>Logout</span>) : (<Link to='/login'>Login</Link>)}
             </li>
 
