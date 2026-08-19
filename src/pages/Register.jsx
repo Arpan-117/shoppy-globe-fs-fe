@@ -13,7 +13,7 @@ function Register() {
         if (!validate()) {
             alert('Please correct the errors in the form.');
         } else {
-            let response = fetch('http://localhost:5000/api/register', {
+            let response = fetch('https://shoppy-globe-backend-services.onrender.com/api/register', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

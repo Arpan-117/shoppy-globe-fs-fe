@@ -1,5 +1,5 @@
 const getCart = async () => {
-    const response = fetch('http://localhost:5000/api/cart', {
+    const response = fetch('https://shoppy-globe-backend-services.onrender.com/api/cart', {
         methog: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -20,7 +20,7 @@ const getCart = async () => {
 const addToCart = (id) => {
     console.log(id);
     const token = localStorage.getItem("token");
-    let response = fetch('http://localhost:5000/api/cart', {
+    let response = fetch('https://shoppy-globe-backend-services.onrender.com/api/cart', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -50,7 +50,7 @@ const addToCart = (id) => {
 const increaseQuantity = async(id) => {
     console.log(id);
     const token = localStorage.getItem("token");
-    const fuse = `http://localhost:5000/api/cart/${id}`;
+    const fuse = `https://shoppy-globe-backend-services.onrender.com/api/cart/${id}`;
     console.log(fuse);
     let response = fetch(fuse, {
                 method: "PUT",

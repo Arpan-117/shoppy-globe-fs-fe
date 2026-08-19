@@ -14,7 +14,7 @@ function Login() {
         if (!validate()) {
             alert('Please correct the errors in the form.');
         } else {
-            let response = fetch('http://localhost:5000/api/login', {
+            let response = fetch('https://shoppy-globe-backend-services.onrender.com/api/login', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

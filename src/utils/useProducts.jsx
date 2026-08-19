@@ -16,9 +16,9 @@ const useProducts = (prdId = null) => {
     useEffect(() => {
         let fetchURL;
         if (prdId != null) {
-        fetchURL =  `http://localhost:5000/api/products/${prdId}`;
+        fetchURL =  `https://shoppy-globe-backend-services.onrender.com/api/products/${prdId}`;
     } else {
-        fetchURL =  `http://localhost:5000/api/products`;
+        fetchURL =  `https://shoppy-globe-backend-services.onrender.com/api/products`;
     }
         const fetchProducts = async () => {
     //         if (prdId != null) {
